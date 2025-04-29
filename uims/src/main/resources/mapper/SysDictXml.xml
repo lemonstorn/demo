@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weaver.uims.mapper.SysDictMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.weaver.uims.model.po.SysDict">
+        <result column="id" property="id" />
+        <result column="created_by" property="createdBy" />
+        <result column="create_time" property="createTime" />
+        <result column="updated_by" property="updatedBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="source" property="source" />
+        <result column="dict_type" property="dictType" />
+        <result column="dict_sub_type" property="dictSubType" />
+        <result column="dict_key" property="dictKey" />
+        <result column="dict_value" property="dictValue" />
+        <result column="dict_key_order" property="dictKeyOrder" />
+        <result column="status" property="status" />
+        <result column="dict_lang" property="dictLang" />
+        <result column="dict_desc" property="dictDesc" />
+        <result column="dict_extend1" property="dictExtend1" />
+        <result column="dict_extend2" property="dictExtend2" />
+        <result column="order" property="order" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        created_by,
+        create_time,
+        updated_by,
+        update_time,
+        `source`, dict_type, dict_sub_type, dict_key, dict_value, dict_key_order, `status`, dict_lang, dict_desc, dict_extend1, dict_extend2, `order`
+    </sql>
+
+</mapper>

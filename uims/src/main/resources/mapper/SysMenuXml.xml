@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weaver.uims.mapper.SysMenuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.weaver.uims.model.po.SysMenu">
+        <result column="id" property="id" />
+        <result column="created_by" property="createdBy" />
+        <result column="create_time" property="createTime" />
+        <result column="updated_by" property="updatedBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="name" property="name" />
+        <result column="parent_id" property="parentId" />
+        <result column="icon" property="icon" />
+        <result column="redirect" property="redirect" />
+        <result column="tile" property="tile" />
+        <result column="component" property="component" />
+        <result column="source" property="source" />
+        <result column="status" property="status" />
+        <result column="title" property="title" />
+        <result column="path" property="path" />
+        <result column="is_keep_alive" property="isKeepAlive" />
+        <result column="sort" property="sort" />
+        <result column="is_link" property="isLink" />
+        <result column="is_hide" property="isHide" />
+        <result column="is_full" property="isFull" />
+        <result column="is_affix" property="isAffix" />
+        <result column="active_menu" property="activeMenu" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        created_by,
+        create_time,
+        updated_by,
+        update_time,
+        `name`, parent_id, icon, redirect, tile, `component`, `source`, `status`, title, `path`, is_keep_alive, sort, is_link, is_hide, is_full, is_affix, active_menu
+    </sql>
+
+</mapper>

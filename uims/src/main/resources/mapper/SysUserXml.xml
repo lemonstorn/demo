@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weaver.uims.user.query.SysUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.weaver.uims.user.domain.model.SysUser">
+        <result column="id" property="id" />
+        <result column="created_by" property="createdBy" />
+        <result column="create_time" property="createTime" />
+        <result column="updated_by" property="updatedBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="user_name" property="userName" />
+        <result column="password" property="password" />
+        <result column="nick_name" property="nickName" />
+        <result column="grade_level" property="gradeLevel" />
+        <result column="phone_num" property="phoneNum" />
+        <result column="bank_card_num" property="bankCardNum" />
+        <result column="domicile_place_province" property="domicilePlaceProvince" />
+        <result column="domicile_place_city" property="domicilePlaceCity" />
+        <result column="domicile_place_address" property="domicilePlaceAddress" />
+        <result column="id_card_num" property="idCardNum" />
+        <result column="gender" property="gender" />
+        <result column="birth" property="birth" />
+        <result column="avatar" property="avatar" />
+        <result column="source" property="source" />
+        <result column="status" property="status" />
+        <result column="account_expire_time" property="accountExpireTime" />
+        <result column="credentials_expire_time" property="credentialsExpireTime" />
+        <result column="real_name" property="realName" />
+        <result column="email" property="email" />
+        <result column="tenant_id" property="tenantId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        created_by,
+        create_time,
+        updated_by,
+        update_time,
+        user_name, `password`, nick_name, grade_level, phone_num, bank_card_num, domicile_place_province, domicile_place_city, domicile_place_address, id_card_num, gender, birth, avatar, `source`, `status`, account_expire_time, credentials_expire_time, real_name, email, tenant_id
+    </sql>
+
+</mapper>

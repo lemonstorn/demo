@@ -1,0 +1,59 @@
+debug: false
+weaver:
+  security:
+    sm4:
+      key: weaver2025_onDev
+server:
+  port: 9100
+spring:
+  application:
+    name: uims
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.6.8:3306/uims?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      username: root
+      password: dev-2024
+      # 连接池基础配置
+      initial-size: 1        # 初始连接数 (适合轻量级应用)
+      max-active: 8          # 最大连接数 (建议根据并发量调整至10-20)
+      min-idle: 1            # 最小空闲连接 (建议保持与initial-size一致)
+      # 连接检测配置
+      test-on-borrow: true   # 获取连接时校验 (性能损耗大，建议改为false)
+      test-on-return: true   # 归还连接时校验 (同上)
+      test-while-idle: true  # 空闲时校验 (推荐开启)
+      time-between-eviction-runs-millis: 60000      # 检测间隔(60秒合理)
+      min-evictable-idle-time-millis: 300000        # 最小空闲时间(5分钟)
+      max-evictable-idle-time-millis: 900000        # 最大空闲时间(15分钟)
+      validation-query: select 1                    # 推荐改为数据库专用语句如"SELECT 1 FROM DUAL"
+      validation-query-timeout: 3                   # 验证超时(秒)
+      # 泄露连接处理
+      remove-abandoned: true         # 自动回收泄露连接
+      remove-abandoned-timeout: 180  # 180秒未关闭则回收
+      log-abandoned: true            # 记录泄露日志
+
+      # 预编译语句池
+      pool-prepared-statements: true                # 启用预编译缓存
+      max-pool-prepared-statement-per-connection-size: 20  # 单个连接最大缓存数
+
+      filters: stat,wall,slf4j
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 2000
+  data:
+    redis:
+      host: 192.168.6.8
+      port: 6379
+system:
+  login:
+    use: jwt_redis # 登陆方式
+    need: false # 是否需要登录
+    single: false #是否需要单点登录
+    time: 28800 # 登录有效时间8小时
+    loginUri: /login # 登录url
